@@ -1,9 +1,9 @@
 //console.log("Test");
 
 var wall = document.getElementById("wall");
-var gap = document.getElementById("hole");
+var gap = document.getElementById("gap");
 
-gap.addEventListener('animationinteration', () => {
-    var random = -((Math.random()*300)+150);
-    gap.style.top = random + "px";
-})
+gap.addEventListener('animationiteration', () => {
+    const random = (-((Math.random()*300)+150));
+    gap.style.top = random+"px";
+});

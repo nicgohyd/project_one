@@ -8,7 +8,7 @@
     height:500px;
     border: 1px solid black;
     margin: auto;
-    overflow: hidden; #game confined within margins
+    overflow: hidden; /*game confined within margins*/
 }
 
 #wall{
