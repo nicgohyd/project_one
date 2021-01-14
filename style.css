@@ -4,10 +4,11 @@
 }
 
 #game{
-    width:400px;
+    width:800px;
     height:500px;
     border: 1px solid black;
     margin: auto;
+    overflow: hidden; #game confined within margins
 }
 
 #wall{
@@ -15,22 +16,20 @@
     height: 500px;
     background-color: brown;
     position: relative;
-    left: 400px; 
+    left: 800px; 
     animation: wall 2s infinite linear;
 }
 @keyframes wall{
-    0%{left: 400px;}
+    0%{left: 800px;}
     100%{left: -50px;}
 }
 
 #gap{
     width: 50px;
     height: 150px;
-    background-color:white;
+    background-color: white;
     position: relative;
-    left:400px;
-}
-
-#player{
-
+    left: 800px;
+    top: -500px;
+    animation: wall 2s infinite linear;
 }
