@@ -16,6 +16,11 @@
     background-color: brown;
     position: relative;
     left: 400px; 
+    animation: wall 2s infinite linear;
+}
+@keyframes wall{
+    0%{left: 400px;}
+    100%{left: -50px;}
 }
 
 #gap{
