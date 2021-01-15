@@ -16,12 +16,15 @@ gap.addEventListener('animationiteration', () => {
 //Gravity logic
 setInterval(function(){
     var playerTop = 
-    parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+    parseInt(window.getComputedStyle(player).getPropertyValue("top")); //get value of player position
     if (jumping == 0) {
         player.style.top = (playerTop + 3) +"px"; //speed of gravity
     }
+    var wallLeft = parseInt(window.getComputedStyle(wall).getPropertyValue("left")); //get margin value of left of the wall
+    var gapTop = parseInt(window.getComputedStyle(gap).getPropertyValue("top")); //get margin value of top of the gap
+    var pTop = -(500-playerTop);
     //crash detection:
-    if (playerTop>556) { //if character hits the bottom
+    if((playerTop>500) || ((wallLeft<20) && (wallLeft>-50) && ((pTop < gapTop) || (pTop>gapTop+130)))){
         alert("Yikes! Game over. Score = " + scoreCounter);
         player.style.top = 100 + "px"; //reset player
         scoreCounter = 0; //reset score
