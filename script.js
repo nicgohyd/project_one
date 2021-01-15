@@ -16,7 +16,7 @@ setInterval(function(){
     var playerTop = 
     parseInt(window.getComputedStyle(player).getPropertyValue("top"));
     if (jumping == 0) {
-        player.style.top = (playerTop + 3) +"px";
+        player.style.top = (playerTop + 3) +"px"; //speed of gravity
     }
 },10)
 
@@ -27,10 +27,13 @@ function jump(){
     var jumpInterval = setInterval(function(){
         var playerTop = 
         parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+        //prevent player from going past top of game map
         if(playerTop > 6){
-            player.style.top = (playerTop - 5) +"px"; //determines jump sensitivity
+            player.style.top = (playerTop - 5) +"px"; //determines jump sensitivity: less sensity = easier
         }
-        if (jumpCount > 20){
+        //jumpCount determines how long the jump will last for
+        //set to <20 = 200ms, make longer for slower jumps
+        if (jumpCount > 20){ //after 200ms, exit jump function
             clearInterval(jumpInterval);
             jumping = 0; //to restart gravity
             jumpCount = 0;
