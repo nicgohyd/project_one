@@ -22,9 +22,10 @@ setInterval(function(){
     }
     var wallLeft = parseInt(window.getComputedStyle(wall).getPropertyValue("left")); //get margin value of left of the wall
     var gapTop = parseInt(window.getComputedStyle(gap).getPropertyValue("top")); //get margin value of top of the gap
-    var pTop = -(500-playerTop);
+    var pTop = -(500-playerTop); //this is to match playerTop with the top of the gap (which is at default -500) for the crash detection
     //crash detection:
-    if((playerTop>500) || ((wallLeft<20) && (wallLeft>-50) && ((pTop < gapTop) || (pTop>gapTop+130)))){
+    if((playerTop>480) || ((wallLeft<20) && (wallLeft>-50) && ((pTop < gapTop) || (pTop>gapTop+130)))){
+    // 1. if player hits bottom, or 2. if the wall is in the player's column, and the player does not pass through the gap, then crash is true
         alert("Yikes! Game over. Score = " + scoreCounter);
         player.style.top = 100 + "px"; //reset player
         scoreCounter = 0; //reset score
