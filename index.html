@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -12,18 +13,30 @@
     <div id="game">
         <div id="wall"></div>
         <div id="gap"></div>
-        <div id="player"></div>
-    </div>
-
-
-    <div id="modal-background">
-        <div id="modal-textbox">
-            <h1>Welcome!</h1>
-            <p>
-                Press click to flap your wings, avoid slamming into walls or the ground. Easy.
-            </p>
+        <div id="player">
+            <img src = "img/bird.png" width="25px" height="25px" alt="x">
         </div>
     </div>
+    
+    <button id="modal-button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" >Instructions</button>
+
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container w3-teal"> 
+          <span onclick="document.getElementById('id01').style.display='none'" 
+          class="w3-button w3-display-topright">&times;</span>
+          <h2>Flappy bird... kinda</h2>
+        </header>
+        <div class="w3-container">
+          <p>Click to flap your wings. Get through as many obstacles as you can without crashing.</p>
+        </div>
+        <footer class="w3-container w3-teal">
+          <p>   </p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  
 
 </body>
 <script src="script.js"></script>

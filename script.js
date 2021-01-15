@@ -1,17 +1,23 @@
-//console.log("Test");
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 var wall = document.getElementById("wall");
 var gap = document.getElementById("gap");
 var jumping = 0;
-var scoreCounter = 0;
+var scoreCounter = -1;
 
 gap.addEventListener('animationiteration', () => {
     const random = (-((Math.random()*300)+150));
     gap.style.top = random+"px";
     scoreCounter++
 });
-
-//create player's movement logic
 
 //Gravity logic
 setInterval(function(){
@@ -26,9 +32,9 @@ setInterval(function(){
     //crash detection:
     if((playerTop>480) || ((wallLeft<20) && (wallLeft>-50) && ((pTop < gapTop) || (pTop>gapTop+130)))){
     // 1. if player hits bottom, or 2. if the wall is in the player's column, and the player does not pass through the gap, then crash is true
-        alert("Yikes! Game over. Score = " + scoreCounter);
+        alert("Yikes! Game over. Score: " + scoreCounter + ".");
         player.style.top = 100 + "px"; //reset player
-        scoreCounter = 0; //reset score
+        scoreCounter = -1; //reset score
     }
 },10)
 
