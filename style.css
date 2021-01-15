@@ -43,6 +43,6 @@
 
 #modal-button{
     position: relative;
-    justify-content: center;
-    align-content: center;
+    left: 460px;
+    top: 10px;
 }
